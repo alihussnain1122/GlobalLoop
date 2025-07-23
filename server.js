@@ -15,7 +15,10 @@ dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 
 const app= express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://global-loop.vercel.app',
+    credentials: true
+}));
 app.use(express.json());
 //Routes
 app.use('/api/users', authRoutes);
